@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @super_being.name %>
+</p>
+
+<p>
+  <strong>Power:</strong>
+  <%= @super_being.power %>
+</p>
+
+<p>
+  <strong>Confirmed kills:</strong>
+  <%= @super_being.confirmed_kills %>
+</p>
+
+<p>
+  <strong>Human:</strong>
+  <%= @super_being.human %>
+</p>
+
+<p>
+  <strong>Team:</strong>
+  <%= @super_being.team_id   %>
+  
+
+</p>
+<p>
+  <strong>Arch nemesis:</strong>
+  <%= @super_being.arch_nemesis_id %>
+</p>
+
+<%= link_to 'Edit', edit_super_being_path(@super_being) %> |
+<%= link_to 'Back', super_beings_path %>

@@ -1,0 +1,41 @@
+<%= form_for(@super_being) do |f| %>
+  <% if @super_being.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@super_being.errors.count, "error") %> prohibited this super_being from being saved:</h2>
+
+      <ul>
+      <% @super_being.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :power %><br>
+    <%= f.text_field :power %>
+  </div>
+  <div class="field">
+    <%= f.label :confirmed_kills %><br>
+    <%= f.number_field :confirmed_kills %>
+  </div>
+  <div class="field">
+    <%= f.label :human %><br>
+    <%= f.check_box :human %>
+  </div>
+  <div class="field">
+    <%= f.label :team_id %><br>
+    <%= f.collection_select(:team_id, Team.all, :id, :name) %>
+  </div>
+  <div class="field">
+    <%= f.label :arch_nemesis_id %><br>
+    <%= f.number_field :arch_nemesis_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

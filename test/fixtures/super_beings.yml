@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  power: MyString
+  confirmed_kills: 1
+  human: false
+  team_id: 1
+  arch_nemesis_id: 1
+
+two:
+  name: MyString
+  power: MyString
+  confirmed_kills: 1
+  human: false
+  team_id: 1
+  arch_nemesis_id: 1

@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Super Beings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Power</th>
+      <th>Confirmed kills</th>
+      <th>Human</th>
+      <th>Team</th>
+      <th>Arch nemesis</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @super_beings.each do |super_being| %>
+      <tr>
+        <td><%= super_being.name %></td>
+        <td><%= super_being.power %></td>
+        <td><%= super_being.confirmed_kills %></td>
+        <td><%= super_being.human %></td>
+        <td><%= super_being.team_id %></td>
+        <td><%= super_being.arch_nemesis_id %></td>
+        <td><%= link_to 'Show', super_being %></td>
+        <td><%= link_to 'Edit', edit_super_being_path(super_being) %></td>
+        <td><%= link_to 'Destroy', super_being, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Super being', new_super_being_path %>
