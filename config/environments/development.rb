@@ -38,6 +38,8 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
-ENV["DARK_SKY_API_KEY"] = "74a5ed059413feea39f133f62ebbc85d"
+#ENV["DARK_SKY_API_KEY"] = "74a5ed059413feea39f133f62ebbc85d"
+#don't need the above as it's added to heroku and my ./profile. But I just commented it out bc i don't want to lose it. and don't know what i'm doing
+
 end
 
