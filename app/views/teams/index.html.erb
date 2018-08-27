@@ -21,9 +21,40 @@
         <td><%= link_to 'Destroy', team, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
+  
+    
   </tbody>
 </table>
 
 <br>
 
 <%= link_to 'New Team', new_team_path %>
+
+<div class="weather_summary">
+ <br>
+</div>
+<script>
+
+        navigator.geolocation.getCurrentPosition(function(position) {
+
+        var Long = position.coords.longitude || 40.7508;
+        var Lat = position.coords.latitude || -73.8916;
+        $.ajax({
+          url: 'api/v1/get_weather',
+          type: 'GET',
+          data: { lat: Lat, lng: Long } ,
+          contentType: 'application/json; charset=utf-8',
+          success: function (response) {
+            var weather_summary = response.daily.summary;
+              $('.weather_summary').text ("Oh, and the weather will be: " + weather_summary);
+  
+  //          $('h1').text (summary);
+  
+  //          console.log(response);
+          },
+          error: function (error) {
+            console.log(error);
+          }
+        });
+      });
+</script>
